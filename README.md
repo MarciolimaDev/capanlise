@@ -24,7 +24,7 @@ AcreCap Legal Analyzer é um sistema desenvolvido em **Django** para analisar o 
    ```
 2. Acesse o diretório do projeto:
    ```bash
-   cd evenx
+   cd capanlise
    ```
 3. Crie um ambiente virtual e ative-o:
    ```bash
