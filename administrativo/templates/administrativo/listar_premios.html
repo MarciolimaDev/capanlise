@@ -1,0 +1,55 @@
+{% extends "admin/baseadmin.html" %}
+{% load static %}
+
+
+{% block content %}
+
+{% include 'admin/menuadmin.html' %}
+
+<div class="main-container">
+    
+    {% include 'admin/menulateral.html' %}
+
+    <div class="main">
+
+        <div class="box-container">
+            <h2>Premios</h2>
+        </div>
+
+        <div class="report-container">
+            <div class="report-header">
+                <h1 class="recent-Articles">{{ sorteio.numeroEdicao }}ª Ediçao ({{ sorteio.dataEdicao|date:"d/m/Y" }})</h1>
+            </div>
+
+            <div class="report-body">
+                <div class="report-topic-heading">
+                    <h3 class="t-op">Prêmio</h3>
+                    <h3 class="t-op">Dezenas</h3>
+                    <h3 class="t-op">Acessar</h3>
+                </div>
+
+                <div class="items">
+                    {% for premio in premios %}
+                        <div class="item1">
+                            <h3 class="t-op-nextlvl">{{ premio.ordemPremio }}º Prêmio</h3>
+                            <h3 class="t-op-nextlvl">
+                                <span>
+                                    {% for dezena in premio.dezenas.all %}
+                                        <span class="dezena">{{ dezena.numero }}</span>
+                                    {% empty %}
+                                        Nenhuma dezena cadastrada.
+                                    {% endfor%}
+                                </span>
+                            </h3>
+                            <a href="{% url 'administracao:adicionar_dezenas' sorteio.id premio.id %}"><button>Adicionar Dezenas</button></a>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'administrativo/js/index.js' %}"></script>
+{% endblock content %}

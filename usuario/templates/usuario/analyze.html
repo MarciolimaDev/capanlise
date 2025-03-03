@@ -1,0 +1,36 @@
+{% extends "global/base.html" %}
+{% load static %}
+
+
+{% block content %}
+<header class="">
+    {% include "global/navbar.html" %}
+</header>
+
+<div class="container">
+    <h2 class="text-center my-4">Análise</h2>
+
+    <!-- Filtros -->
+    <div class="filters">
+        <label for="inicio">Início:</label>
+        <select id="inicio" class="form-select form-select-sm"></select>
+
+        <label for="fim">Fim:</label>
+        <select id="fim" class="form-select form-select-sm"></select>
+
+        <button onclick="buscarAnalise()" class="btn btn-primary mt-3 mb-3">Analisar</button>
+    </div>
+
+    <!-- Resultados -->
+    <div id="resultados" class="resultados-container">
+        <p>Selecione um intervalo para visualizar os 20 números mais frequentes.</p>
+    </div>
+</div>
+
+<script src="{% static 'usuario/js/analize.js' %}"></script>
+
+
+
+
+
+{% endblock %}

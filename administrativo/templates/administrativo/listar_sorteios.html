@@ -1,0 +1,50 @@
+{% extends "admin/baseadmin.html" %}
+{% load static %}
+
+
+{% block content %}
+
+{% include 'admin/menuadmin.html' %}
+
+<div class="main-container">
+    
+    {% include 'admin/menulateral.html' %}
+
+    <div class="main">
+
+        <div class="box-container">
+            <h2>Lista de Sorteios</h2>
+        </div>
+
+        <div class="report-container">
+            <div class="report-header">
+                <h1 class="recent-Articles">Todos os Sorteios</h1>
+                <a href="{% url 'administracao:criar_sorteio' %}"><button class="view">Adicionar</button></a>
+            </div>
+
+            <div class="report-body">
+                <div class="report-topic-heading">
+                    <h3 class="t-op">Edição</h3>
+                    <h3 class="t-op">Ano</h3>
+                    <h3 class="t-op">Data</h3>
+                    <h3 class="t-op">Acessar</h3>
+                </div>
+
+                <div class="items">
+                    {% for sorteio in sorteios %}
+                        <div class="item1">
+                            <h3 class="t-op-nextlvl">{{ sorteio.numeroEdicao }}</h3>
+                            <h3 class="t-op-nextlvl">{{ sorteio.anoEdicao }}</h3>
+                            <h3 class="t-op-nextlvl">{{ sorteio.dataEdicao|date:"d/m/Y"}}</h3>
+                            <a href="{% url 'administracao:listar_premios' sorteio.id %}"><button>Acessar</button></a>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'administrativo/js/index.js' %}"></script>
+{% endblock content %}

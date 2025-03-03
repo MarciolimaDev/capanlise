@@ -1,0 +1,27 @@
+{% extends "global/base.html" %}
+{% load static %}
+
+{% block content %}
+<header class="">
+    {% include "global/navbar.html" %}
+</header>
+
+<div class="container">
+    <h2 class="text-center my-4">Resultados</h2>
+
+    <!-- Filtro por Edição -->
+    <form id="filtroForm" class="mb-4">
+        <label for="edicao">Selecione a Edição:</label>
+        <select id="edicao" class="form-select">
+            <!--As opções serão adicionadas pelo Javascript-->
+        </select>
+    </form>
+
+    <div id="resultados"></div>
+
+    <div id="frequencia-dezenas"></div>
+</div>
+
+<script src="{% static 'usuario/js/script.js' %}"></script>
+    
+{% endblock %}

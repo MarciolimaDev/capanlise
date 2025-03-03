@@ -1,0 +1,6 @@
+<form method="post">
+    {% csrf_token %}
+    <label for="id_dezenas">Digite as dezenas separadas por vírgula:</label>
+    <textarea name="dezenas" id="id_dezenas" rows="4"></textarea>
+    <button type="submit">Adicionar</button>
+</form>

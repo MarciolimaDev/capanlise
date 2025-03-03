@@ -1,0 +1,43 @@
+{% extends "admin/baseadmin.html" %}
+{% load static %}
+
+{% block content %}
+
+{% include 'admin/menuadmin.html' %}
+<!--<div class="container">
+    <h2 class="text-center my-4">Adicionar Novo Sorteio</h2>
+    <form method="POST" class="card p-4">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Criar Sorteio</button>
+    </form>
+</div>-->
+
+<div class="main-container">
+    
+    {% include 'admin/menulateral.html' %}
+
+    <div class="main">
+
+        <div class="box-container">
+            <h2>Criar Sorteio/Edição</h2>
+        </div>
+
+        <div class="report-container">
+            <div class="report-header">
+                <h1 class="recent-Articles">Crie um Sorteio/Edição</h1>
+            </div>
+
+            <div class="report-body">
+                <form method="POST" class="card p-4">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="view">Criar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'administrativo/js/index.js' %}"></script>
+{% endblock %}

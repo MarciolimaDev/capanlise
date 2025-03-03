@@ -1,0 +1,33 @@
+.dezenas-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.dezena {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 15px;
+    color: #333;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.quente {
+    background-color: red;
+}
+
+.morno {
+    background-color: orange;
+}
+
+.fraco {
+    background-color: yellow;
+    color: black;
+}

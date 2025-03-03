@@ -1,0 +1,45 @@
+{% extends "global/base.html" %}
+
+
+{% block content %}
+<header class="">
+    {% include "global/navbar.html" %}
+</header>
+
+<div class="container mt-4">
+    <h2 class="text-center">Resultados do Bingo</h2>
+
+    <!-- Filtro -->
+    <form method="GET" class="row g-3 mb-4">
+        <div class="col-md-3">
+            <label for="ano" class="form-label">Ano:</label>
+            <select name="ano" id="ano" class="form-select">
+                <option value="">Todos</option>
+                {% for ano in anos_disponiveis %}
+                <option value="{{ ano }}" {% if ano_selecionado == ano %}selected{% endif %}>{{ ano }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="col-md-3">
+            <label for="sorteio" class="form-label">Número do Sorteio:</label>
+            <input type="number" name="sorteio" id="sorteio" class="form-control" value="{{ sorteio_selecionado }}">
+        </div>
+
+        <div class="col-md-3">
+            <label for="premio" class="form-label">Prêmio:</label>
+            <select name="premio" id="premio" class="form-select">
+                <option value="">Todos</option>
+                <option value="1º" {% if premio_selecionado == "1º" %}selected{% endif %}>1º Prêmio</option>
+                <option value="2º" {% if premio_selecionado == "2º" %}selected{% endif %}>2º Prêmio</option>
+                <option value="3º" {% if premio_selecionado == "3º" %}selected{% endif %}>3º Prêmio</option>
+                <option value="4º" {% if premio_selecionado == "4º" %}selected{% endif %}>4º Prêmio</option>
+            </select>
+        </div>
+
+        <div class="col-md-3 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100">Filtrar</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
