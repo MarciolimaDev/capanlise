@@ -20,7 +20,7 @@ AcreCap Legal Analyzer é um sistema desenvolvido em **Django** para analisar o 
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/MarciolimaDev/evenx.git
+   git clone https://github.com/MarciolimaDev/capanlise.git
    ```
 2. Acesse o diretório do projeto:
    ```bash
